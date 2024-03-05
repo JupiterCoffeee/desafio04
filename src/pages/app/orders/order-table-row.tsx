@@ -109,7 +109,6 @@ export function OrderTableRow({ order }: OrderTableRowProps) {
       </TableCell>
       <TableCell>
         <div className="flex items-center gap-2">
-          <span className="h-2 w-2 rounded-full bg-slate-400" />
           <span className="font-medium text-muted-foreground">
             <OrderStatus status={order.status} />
           </span>

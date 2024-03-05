@@ -53,12 +53,6 @@ export function OrderDetails({ orderId, open }: OrderDetailsProps) {
                 <TableCell className="text-muted-foreground">Status</TableCell>
                 <TableCell className="flex justify-end">
                   <OrderStatus status={order.status} />
-                  <div className="flex items-center gap-2">
-                    <span className="h-2 w-2 rounded-full bg-slate-400" />
-                    <span className="font-medium text-muted-foreground">
-                      Pendente
-                    </span>
-                  </div>
                 </TableCell>
               </TableRow>
               <TableRow>
@@ -113,7 +107,7 @@ export function OrderDetails({ orderId, open }: OrderDetailsProps) {
                       {item.quantity}
                     </TableCell>
                     <TableCell className="text-right">
-                      {(item.priceInCents / 100).toLocaleString('ptBR', {
+                      {(item.priceInCents / 100).toLocaleString('pt-br', {
                         style: 'currency',
                         currency: 'BRL',
                       })}
@@ -122,7 +116,7 @@ export function OrderDetails({ orderId, open }: OrderDetailsProps) {
                       {(
                         (item.priceInCents * item.quantity) /
                         100
-                      ).toLocaleString('ptBR', {
+                      ).toLocaleString('pt-br', {
                         style: 'currency',
                         currency: 'BRL',
                       })}
@@ -134,7 +128,7 @@ export function OrderDetails({ orderId, open }: OrderDetailsProps) {
             <TableFooter>
               <TableCell colSpan={3}>Total do pedido</TableCell>
               <TableCell className="text-right font-medium">
-                {(order.totalInCents / 100).toLocaleString('ptBR', {
+                {(order.totalInCents / 100).toLocaleString('pt-br', {
                   style: 'currency',
                   currency: 'BRL',
                 })}
