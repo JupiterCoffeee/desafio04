@@ -3,7 +3,7 @@ import { http, HttpResponse } from 'msw'
 import { RegisterRestaurantBody } from '../register-restaurant'
 
 export const registerRestaurantMock = http.post<never, RegisterRestaurantBody>(
-  '/restaurants',
+  '/authenticate',
   async ({ request }) => {
     const { restaurantName } = await request.json()
 
@@ -11,6 +11,6 @@ export const registerRestaurantMock = http.post<never, RegisterRestaurantBody>(
       return new HttpResponse(null, { status: 201 })
     }
 
-    return new HttpResponse(null, { status: 400 })
+    return new HttpResponse(null, { status: 401 })
   },
 )
